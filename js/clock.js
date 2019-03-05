@@ -70,7 +70,7 @@ $(document).ready(function() {
 
     if(h >= 6 && h <=12){
         showMorningTime();
-    }if(h > 12 && h > 6){
+    }if(h >= 13 && h <= 18){
           showDayTime();
     }if(h >= 17 && h <= 5){
         showNightTime();
