@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="nl" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.0/TweenMax.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/utils/Draggable.min.js" type="text/javascript"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <script src="js/clock.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <h1 id="title">TIJD:</h1>
+    <p id="actualTime"></p>
+    <div id="container">
+      <div class="box second clockS"></div>
+      <div class="box minute clockM"></div>
+      <div class="box hour clockH"></div>
+    </div>
+    <div class="contentHolder">
+      <div>
+        <p>Between 6 and 12</p>
+        <div class="time morning"></div>
+      </div>
+      <div>
+        <p>Between 12 and 18</p>
+        <div class="time afternoon"></div>
+      </div>
+      <div>
+        <p>Between 18 and 6</p>
+        <div class="time night"></div>
+      </div>
+    </div>
+   </body>
+</html>
