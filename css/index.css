@@ -1,6 +1,16 @@
 body{
-  text-align: center;
   font-family: 'Montserrat', sans-serif;
+}
+
+h1, p{
+  text-align: center;
+  color: white;
+}
+
+svg{
+  width: 70px;
+  height: 70px;
+  position: absolute;
 }
 
 #container{
@@ -80,4 +90,15 @@ body{
 
 .afternoon{
   background-color: #FD8F07;
+}
+
+.planet{
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  z-index: -1;
+  right: 0px;
+  bottom: 0px;
+  margin-right: 10px;
+  visibility: hidden;
 }

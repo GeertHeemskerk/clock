@@ -12,6 +12,24 @@ $(document).ready(function() {
   var oneHour = 60 * 60;
   var twelveHours = 12 * 60 * 60;
 
+  var cloud1 = document.querySelector('.cloud');
+  var cloud2 = document.querySelector('.cloud2');
+
+  var sun = document.querySelector('#sun');
+  var moon = document.querySelector('#moon');
+
+  function movingClouds(){
+    document.getElementById('cloud').style.fill = "#ffffff";
+    document.getElementById('cloud2').style.fill = "#ffffff";
+    TweenMax.to(cloud, 8, {ease: Power0.easeNone, x:"100vw", repeat:-1});
+    TweenMax.to(cloud2, 8, {ease: Power0.easeNone, x:"100vw", repeat:-1}).play(4);
+  }
+
+  function movingPlanets(){
+    TweenMax.to(moon, 60, {ease: Power0.easeNone, y:"-85vh"});
+    TweenMax.to(sun, 60, {ease: Power0.easeNone, y:"-85vh"});
+  }
+
   TweenMax.set(".second, .hour, .minute", {
     yPercent: -50,
     transformOrigin: "50% 100%"
@@ -39,19 +57,20 @@ $(document).ready(function() {
 
   function showMorningTime(){
     document.body.style.backgroundColor = "#FED370";
+    document.getElementById('sun').style.visibility = "visible";
   }
 
   function showDayTime(){
     document.body.style.backgroundColor = "#FD8F07";
-    document.getElementById('title').style.color = "white";
-    document.getElementById('actualTime').style.color = "white";
+    document.getElementById('title').style.color = "#ffffff";
+    document.getElementById('actualTime').style.color = "#ffffff";
   }
-
 
   function showNightTime(){
     document.body.style.backgroundColor = "#506F86";
-    document.getElementById('title').style.color = "white";
-    document.getElementById('actualTime').style.color = "white";
+    document.getElementById('title').style.color = "#ffffff";
+    document.getElementById('actualTime').style.color = "#ffffff";
+    document.getElementById('moon').style.visibility = "visible";
   }
 
   function showTime() {
@@ -72,7 +91,7 @@ $(document).ready(function() {
         showMorningTime();
     }if(h >= 13 && h <= 18){
           showDayTime();
-    }if(h >= 17 && h <= 5){
+    }if(h >= 17 && h >= 5){
         showNightTime();
     }
 
@@ -81,6 +100,8 @@ $(document).ready(function() {
   }
 
   showTime();
+  movingClouds();
+  movingPlanets();
 
   setInterval(function() {
     showTime();
