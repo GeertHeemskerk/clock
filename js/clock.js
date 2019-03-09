@@ -21,13 +21,26 @@ $(document).ready(function() {
   function movingClouds(){
     document.getElementById('cloud').style.fill = "#ffffff";
     document.getElementById('cloud2').style.fill = "#ffffff";
-    TweenMax.to(cloud, 8, {ease: Power0.easeNone, x:"100vw", repeat:-1});
-    TweenMax.to(cloud2, 8, {ease: Power0.easeNone, x:"100vw", repeat:-1}).play(4);
+    TweenMax.to(cloud, 8, {
+      ease: Power0.easeNone,
+      x:"100vw",
+      repeat:-1
+    });
+    TweenMax.to(cloud2, 8, {ease: Power0.easeNone,
+       x:"100vw",
+      repeat:-1
+    }).play(4);
   }
 
   function movingPlanets(){
-    TweenMax.to(moon, 60, {ease: Power0.easeNone, y:"-85vh"});
-    TweenMax.to(sun, 60, {ease: Power0.easeNone, y:"-85vh"});
+    TweenMax.to(moon, 60, {
+      ease: Power0.easeNone,
+      y:"-85vh"
+    });
+    TweenMax.to(sun, 60, {
+      ease: Power0.easeNone,
+      y:"-85vh"
+    });
   }
 
   TweenMax.set(".second, .hour, .minute", {
