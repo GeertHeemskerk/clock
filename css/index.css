@@ -21,31 +21,34 @@ body{
   position: absolute;
   height: 70px;
   width: 10px;
-  background-color: #C80000;
+  background-color: #FCFCFC;
   border-radius: 10px;
 }
 
-.green{
-  background: green;
+.dot{
+  z-index: 1;
+  height: 15px;
+  width: 15px;
+  background-color: #000000;
 }
 
 .second{
-  height: 87px;
+  height: 90px;
   width: 2px;
   opacity: 0.5;
-  background-color: #121232;
+  background-color: #5E503F;
 }
 
 .minute{
-  height: 80px;
-  width: 5px;
-  background-color: darkgrey;
+  height: 82px;
+  width: 4px;
+  background-color: #3F4045;
 }
 
 .hour{
-  height: 80px;
-  width: 10px;
-  background-color: black;
+  height: 60px;
+  width: 8px;
+  background-color: #0D0628;
 }
 
 .contentHolder{
