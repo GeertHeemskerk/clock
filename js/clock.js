@@ -12,11 +12,11 @@ $(document).ready(function() {
   var oneHour = 60 * 60;
   var twelveHours = 12 * 60 * 60;
 
-  var cloud1 = document.querySelector('.cloud');
-  var cloud2 = document.querySelector('.cloud2');
+  var cloud1 = $('.cloud');
+  var cloud2 = $('.cloud2');
 
-  var sun = document.querySelector('#sun');
-  var moon = document.querySelector('#moon');
+  var sun = $('#sun');
+  var moon = $('#moon');
 
   function movingClouds(){
     document.getElementById('cloud').style.fill = "#ffffff";
