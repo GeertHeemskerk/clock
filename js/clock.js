@@ -92,6 +92,7 @@ $(document).ready(function() {
   function showMorningTime(){
     document.body.style.backgroundColor = "#FED370";
     document.getElementById('sun').style.visibility = "visible";
+    document.getElementById('moon').style.visibility = "invisible";
   }
 
   function showDayTime(){
@@ -105,6 +106,7 @@ $(document).ready(function() {
     document.getElementById('title').style.color = "#ffffff";
     document.getElementById('actualTime').style.color = "#ffffff";
     document.getElementById('moon').style.visibility = "visible";
+    document.getElementById('sun').style.visibility = "invisible";
   }
 
   function showTime() {
