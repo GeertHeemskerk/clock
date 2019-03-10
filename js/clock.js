@@ -125,7 +125,7 @@ $(document).ready(function() {
       showMorningTime();
     }if(h >= 13 && h <= 18){
       showDayTime();
-    }if(h >= 17 && h >= 5){
+    }if(h >= 19 && h >= 5){
       showNightTime();
       beerTimeMsg();
     }
