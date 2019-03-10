@@ -58,6 +58,10 @@ $(document).ready(function() {
       ease: Power0.easeNone,
       y:"-55"
     }).delay(2);
+
+    TweenMax.to(beerTime, 3, {
+      opacity: 0
+    }).delay(20);
   }
 
   TweenMax.set(".second, .hour, .minute", {
@@ -118,14 +122,11 @@ $(document).ready(function() {
     secondsTween.progress(secondsAsSeconds / oneSecond);
 
     if(h >= 6 && h <=12){
-        showMorningTime();
+      showMorningTime();
     }if(h >= 13 && h <= 18){
-          showDayTime();
+      showDayTime();
     }if(h >= 17 && h >= 5){
-        showNightTime();
-    }
-
-    if(h = 14){
+      showNightTime();
       beerTimeMsg();
     }
 
