@@ -1,0 +1,41 @@
+@media only screen and (min-width: 768px){
+  h1{
+    font-size: 45px;
+  }
+
+  p:nth-child(2){
+    font-size: 20px;
+  }
+
+  #container{
+    height: 250px;
+    width: 250px;
+    border-radius: 175px;
+  }
+
+  .dot{
+    height: 20px;
+    width: 20px;
+  }
+
+  .second{
+    height: 110px;
+  }
+
+  .minute{
+    height: 102px;
+  }
+
+  .hour{
+    height: 80px;
+  }
+
+  .confetti{
+    height: 400px;
+  }
+
+  h2{
+    margin-top: -420px;
+  }
+
+}

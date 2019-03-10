@@ -18,6 +18,15 @@ $(document).ready(function() {
   var sun = $('#sun');
   var moon = $('#moon');
 
+  var body = $('body');
+
+  var beerTime = $('.beerTime');
+
+  TweenMax.to(body, 3,{
+    ease: Bounce.easeOut,
+    y: 500
+  });
+
   function movingClouds(){
     document.getElementById('cloud').style.fill = "#ffffff";
     document.getElementById('cloud2').style.fill = "#ffffff";
@@ -35,12 +44,20 @@ $(document).ready(function() {
   function movingPlanets(){
     TweenMax.to(moon, 60, {
       ease: Power0.easeNone,
-      y:"-85vh"
+      y:"-440"
     });
     TweenMax.to(sun, 60, {
       ease: Power0.easeNone,
-      y:"-85vh"
+      y:"-440"
     });
+  }
+
+  function beerTimeMsg(){
+    document.getElementsByClassName('beerTime')[0].style.visibility = "visible";
+    TweenMax.to(beerTime, 2, {
+      ease: Power0.easeNone,
+      y:"-55"
+    }).delay(2);
   }
 
   TweenMax.set(".second, .hour, .minute", {
@@ -106,6 +123,10 @@ $(document).ready(function() {
           showDayTime();
     }if(h >= 17 && h >= 5){
         showNightTime();
+    }
+
+    if(h = 14){
+      beerTimeMsg();
     }
 
     document.getElementById("actualTime").innerHTML = h + " : " + m + " : " + s;
