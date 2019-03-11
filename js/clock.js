@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+  //hieronder worden de datums gevalideerd
   var datetime = new Date(),
     h = datetime.getHours(),
     m = datetime.getMinutes(),
@@ -12,6 +14,7 @@ $(document).ready(function() {
   var oneHour = 60 * 60;
   var twelveHours = 12 * 60 * 60;
 
+  //hieronder worden alle divs en svg's gevalideerd
   var cloud1 = $('.cloud');
   var cloud2 = $('.cloud2');
 
@@ -22,11 +25,13 @@ $(document).ready(function() {
 
   var beerTime = $('.beerTime');
 
+  //hier wordt de animatie gegeven aan de body zodat hij stuitert
   TweenMax.to(body, 3,{
     ease: Bounce.easeOut,
     y: 500
   });
 
+  //hier worden de animaties gevalideerd aan de svg's
   function movingClouds(){
     document.getElementById('cloud').style.fill = "#ffffff";
     document.getElementById('cloud2').style.fill = "#ffffff";
@@ -41,6 +46,7 @@ $(document).ready(function() {
     }).play(4);
   }
 
+  //hier worden de planeten geanimeerd
   function movingPlanets(){
     TweenMax.to(moon, 60, {
       ease: Power0.easeNone,
@@ -52,13 +58,17 @@ $(document).ready(function() {
     });
   }
 
+  //hier wordt de biertijd geanimeerd
   function beerTimeMsg(){
     document.getElementsByClassName('beerTime')[0].style.visibility = "visible";
+
+    //hier wordt de message geanimeerd
     TweenMax.to(beerTime, 2, {
       ease: Power0.easeNone,
       y:"-55"
     }).delay(2);
 
+    //hier wordt na 20seconden de class zijn opacity 0 zodat hij weg is
     TweenMax.to(beerTime, 3, {
       opacity: 0
     }).delay(20);
@@ -69,6 +79,8 @@ $(document).ready(function() {
     transformOrigin: "50% 100%"
   });
 
+
+  //hier onder worden alle wijzers geanimeerd en gezegd hoever ze mogen draaien
   var hourTween = TweenMax.to(myPointerH, twelveHours, {
     rotation: "360_cw",
     ease: Linear.easeNone,
@@ -89,6 +101,7 @@ $(document).ready(function() {
     paused: true
   });
 
+  //hieronder worden alle verschillende soort tijden gemaakt
   function showMorningTime(){
     document.body.style.backgroundColor = "#FED370";
     document.getElementById('sun').style.visibility = "visible";
@@ -123,6 +136,7 @@ $(document).ready(function() {
     minuteTween.progress(minutesAsSeconds / oneHour);
     secondsTween.progress(secondsAsSeconds / oneSecond);
 
+    //hier worden alle verschillende tijden gescheiden
     if(h >= 6 && h <=12){
       showMorningTime();
     }if(h >= 13 && h <= 18){
@@ -132,6 +146,7 @@ $(document).ready(function() {
       beerTimeMsg();
     }
 
+    //hier wordt de digitale clock laten zien
     document.getElementById("actualTime").innerHTML = h + " : " + m + " : " + s;
 
   }
@@ -140,6 +155,7 @@ $(document).ready(function() {
   movingClouds();
   movingPlanets();
 
+  //hier update hij de functie na elke seconde
   setInterval(function() {
     showTime();
   }, 1000);
